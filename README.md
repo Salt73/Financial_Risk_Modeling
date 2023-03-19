@@ -28,6 +28,7 @@ data['Status'] = data['Status'].replace({'Late':'Default','Repaid':'Not Default'
 ```
 We are dropping all the rows with the `Status` column equal to `Current` from our `df` and assigning the remaining data to a new DataFrame named `data`. Then, we are replacing the values `Late` with `Default` and `Repaid` with `Not Default` in the `Status` column of the `data` DataFrame.
 
+### Mutual Information
 ```Python
 def make_mi_scores(X, y, discrete_features):
     mi_scores = mutual_info_classif(X, y, discrete_features=discrete_features)
