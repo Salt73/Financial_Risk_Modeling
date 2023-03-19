@@ -227,19 +227,19 @@ Model_class_Pipeline = Pipeline([
 ])
 ```
 #### Logistic Regression Metrics :mag:
-* Accuracy :arrow_right: `0.992054`
+* Accuracy  :arrow_right: `0.992054`
 * Precision :arrow_right: `0.980883`
-* Recall :arrow_right: `1`
-* F1-Score :arrow_right: `0.990349`
+* Recall    :arrow_right: `1`
+* F1-Score  :arrow_right: `0.990349`
 
 
 ![Markdown](img/logistic_reg_gif.gif)
 
 #### Random Forest Classifier Metrics :mag:
-* Accuracy :arrow_right: `0.999871`
+* Accuracy  :arrow_right: `0.999871`
 * Precision :arrow_right: `0.999683`
-* Recall :arrow_right: `1`
-* F1-Score :arrow_right: `0.999842`
+* Recall    :arrow_right: `1`
+* F1-Score  :arrow_right: `0.999842`
 
 
 ![Markdown](img/random_forest_gif.gif)
@@ -268,19 +268,19 @@ Model_Reg_Pipeline = Pipeline([
 ])
 ```
 #### Linear Regression Metrics :mag:
-* Mean Absolute Error :arrow_right: `11955.67`
-* Mean Squared Error  :arrow_right: `1003713881.77`
+* Mean Absolute Error     :arrow_right: `11955.67`
+* Mean Squared Error      :arrow_right: `1003713881.77`
 * Root Mean Squared Error :arrow_right: `31681.44`
-* R2 Score :arrow_right: `0.47`
+* R2 Score                :arrow_right: `0.47`
 
 
 ![Markdown](img/linear_reg_gif.gif)
 
 #### Ridge Metrics :mag:
-* Mean Absolute Error :arrow_right: `11834.95`
-* Mean Squared Error  :arrow_right: `1054420895.13`
+* Mean Absolute Error     :arrow_right: `11834.95`
+* Mean Squared Error      :arrow_right: `1054420895.13`
 * Root Mean Squared Error :arrow_right: `32471.84`
-* R2 Score :arrow_right: `0.48`
+* R2 Score                :arrow_right: `0.48`
 
 
 ![Markdown](img/ridge_gif.gif)
@@ -303,14 +303,15 @@ Throughout our internship, We have appreciated your support, feedback, and guida
 
 ## Contributers
 
-* Pawan Khatri :email: **engrpawan111@gmail.com**
+* Pawan Khatri      :email: **engrpawan111@gmail.com**
 * Poojitha Guniputi :email: **poojithaguniputi@gmail.com**
-* Fasih Ahmed Shaikh :email: **fasihshaikh@hotmail.com**
-* Manavi Nair :email: **manavinair20@gmail.com**
-* Sohan Souri :email: **sohansouri02@gmail.com**
-* Mohamed Ashraf :email: **mohamed1542200@gmail.com**
-* Hani Atef :email: **haniatef1998@gmail.com**
+* Fasih Ahmed       :email: **fasihshaikh@hotmail.com**
+* Manavi Nair       :email: **manavinair20@gmail.com**
+* Sohan Souri       :email: **sohansouri02@gmail.com**
+* Mohamed Ashraf    :email: **mohamed1542200@gmail.com**
+* Hani Atef         :email: **haniatef1998@gmail.com**
 
+## Reference
 * [Project Summary](https://technocollabs.gitbook.io/bondora-statistics/)
 * [7 Reasons Why Your Personal Loan Was Declined](https://www.lendingtree.com/personal/reasons-why-your-personal-loan-was-declined/)
 * [Detectiong Outlier](https://www.askpython.com/python/examples/detection-removal-outliers-in-python)
