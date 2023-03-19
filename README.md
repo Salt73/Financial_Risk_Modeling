@@ -179,6 +179,8 @@ def make_mi_scores(X, y, discrete_features):
 ```
 The function mentioned above calculates mutual information scores using the mutual_info_classif function from scikit-learn, which measures the dependence between two variables. The function returns a pandas Series object called mi_scores containing the mutual information scores for each feature in X, sorted in descending order.
 
+## Machine Learning Modeling
+### Choosing the Features
 We chose the top 15 features for our analysis. We selected 10 features based on their mi scores and created the remaining 3 target variables from the remaining 5 features.
  * InterestAndPenaltyBalance
  * PrincipalBalance
@@ -195,3 +197,106 @@ We chose the top 15 features for our analysis. We selected 10 features based on 
  * IncomeTotal
  * LiabilitiesTotal
  * LoanDuration
+ 
+ 
+### Classification Models
+#### Evaluation Metrics :mag:
+* Accuracy: What proportion of actual positives and negatives is correctly classified?
+* Precision: What proportion of predicted positives are truly positive ?
+* Recall: What proportion of actual positives is correctly classified ?
+* F1 Score : Harmonic mean of Precision and Recall
+
+#### Logistic Regression 
+`Logistic Regression` is a classification technique used in machine learning. It uses a logistic function to model the dependent variable. The dependent variable is dichotomous in nature, in our case there could only be two possible classes `Defaulted` or `Not Defaulted`.
+
+#### Random Forest Classifier
+A `random forest` is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the `max_samples` parameter if `bootstrap=True` (default), otherwise the whole dataset is used to build each tree.
+
+ 
+#### Applying The Models
+We started by splitting the data to 80% train and 20% test. We used a `Pipeline` to perform multiple operations in a sequence, for each element of an iterable, in such a way that the output of each element is the input of the next.
+
+The `Pipeline` consists of:
+* `Normalizer()`
+* Classifier()
+  * `LogisticRegression()`
+  * `RandomForestClassifier()`
+```python
+Model_class_Pipeline = Pipeline([
+    ('scale', Normalizer()),
+    ('classifier', Classifier)
+])
+```
+#### Logistic Regression Metrics :mag:
+* Accuracy :arrow_right: `0.992054`
+* Precision :arrow_right: `0.980883`
+* Recall :arrow_right: `1`
+* F1-Score :arrow_right: `0.990349`
+
+
+![Markdown](img/logistic_reg_gif.gif)
+
+#### Random Forest Classifier Metrics :mag:
+* Accuracy :arrow_right: `0.999871`
+* Precision :arrow_right: `0.999683`
+* Recall :arrow_right: `1`
+* F1-Score :arrow_right: `0.999842`
+
+
+![Markdown](img/random_forest_gif.gif)
+
+We will use the `random forest classifier` in our web application because it performed better than the `logistic regression model`.
+
+### Regression Models
+#### Evaluation Metrics :mag:
+* Mean Absolute Error: magnitude of difference between the prediction of an observation and the true value of that observation.
+* Mean Squared Error: measures how close a regression line is to a set of data points. 
+* Root Mean Squared Error: the square root of the mean of the square of all of the error.
+* R2 Score: the proportion of the variance for a dependent variable that's explained by an independent variable or variables in a regression model.
+
+#### Applying The Models
+We started by splitting the data to 80% train and 20% test. We used a `Pipeline` to perform multiple operations in a sequence, for each element of an iterable, in such a way that the output of each element is the input of the next.
+
+The `Pipeline` consists of:
+* `Normalizer()`
+* Regressor()
+  * `LinearRegression()`
+  * ` Ridge()`
+```python
+Model_Reg_Pipeline = Pipeline([
+    ('scale', Normalizer()),
+    ('classifier', Regressor)
+])
+```
+#### Linear Regression Metrics :mag:
+* Mean Absolute Error :arrow_right: `11955.67`
+* Mean Squared Error  :arrow_right: `1003713881.77`
+* Root Mean Squared Error :arrow_right: `31681.44`
+* R2 Score :arrow_right: `0.47`
+
+
+![Markdown](img/linear_reg_gif.gif)
+
+#### Ridge Metrics :mag:
+* Mean Absolute Error :arrow_right: `11834.95`
+* Mean Squared Error  :arrow_right: `1054420895.13`
+* Root Mean Squared Error :arrow_right: `32471.84`
+* R2 Score :arrow_right: `0.48`
+
+
+![Markdown](img/ridge_gif.gif)
+
+We will use the `ridge model` in our web application because it performed better than the `linear regression`.
+
+## Deployment
+For the `Deplyment`, we used `Flask` as a backend framework to build our web application, and `pythonanywhre` as a cloud service.
+
+To access our app click the following [link](http://haniiiatef.pythonanywhere.com/)
+
+![Markdown](img/website_GIF.gif)
+
+
+
+
+
+
