@@ -18,6 +18,9 @@ As in the financial research domain, there are very few datasets available that 
 
 [Reference](https://technocollabs.gitbook.io/bondora-statistics/)
 
+## Data Wrangling
+### Discover The Data
+The Dataset has 134529 records and 112 columns. 
 
 ## Feature Engineering and Data Pre-Processing:
 ### Pearson Correlation
