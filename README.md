@@ -301,7 +301,7 @@ To access our app click the following [link](http://haniiiatef.pythonanywhere.co
 * [Detectiong Outlier](https://www.askpython.com/python/examples/detection-removal-outliers-in-python)
 * [EMI](https://www.investopedia.com/terms/e/equated_monthly_installment.asp)
 * [Feature Engineering](https://www.kaggle.com/learn/feature-engineering)
-* [[Feature Engineering](https://www.analyticsvidhya.com/blog/2021/03/step-by-step-process-of-feature-engineering-for-machine-learning-algorithms-in-data-science/)
+* [Feature Engineering](https://www.analyticsvidhya.com/blog/2021/03/step-by-step-process-of-feature-engineering-for-machine-learning-algorithms-in-data-science/)
 * [Logistic Regression](https://towardsdatascience.com/the-perfect-recipe-for-classification-using-logistic-regression-f8648e267592)
 * [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
 * [Confusion Matrix](https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea)
@@ -313,6 +313,8 @@ To access our app click the following [link](http://haniiiatef.pythonanywhere.co
 * [Website Design Idea](https://codepen.io/designcourse/pen/VwdgYZL)
 * [pythonanywhere](https://www.pythonanywhere.com/)
 * [Emoji](https://gist.github.com/rxaviers/7360908)
+
+
 
 
 
