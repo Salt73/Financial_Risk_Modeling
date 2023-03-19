@@ -20,7 +20,114 @@ As in the financial research domain, there are very few datasets available that 
 
 ## Data Wrangling
 ### Discover The Data
-The Dataset has 134529 records and 112 columns. 
+
+* Data has 134529 records and 112 columns.
+
+* Data has no duplicates.
+
+### Cleaning The Data
+
+We will start by dropping the columns that has more than `40%` missing values.
+```python
+for i in df.columns:
+  percentage_of_missing_data = int((df[i].isnull().sum() / df.shape[0])* 100)
+  if  percentage_of_missing_data >= 40:
+    print(f'{i}: {percentage_of_missing_data}% missing values.')
+    df.drop(columns = [i], inplace = True)
+```
+`BiddingStartedOn` and `ListedOnUTC` columns are almost identical with only 2% difference so we will drop one of them and the `LoanApplicationStartedDate` column is also almost identical with only `18%` difference (even the differences are only from one to two days) between it and the BiddingStartedOn.
+So we will drop the `BiddingStartedOn` and `ListedOnUTC` columns.
+
+These columns: `LoanId`, `LoanNumber` and `UserName` will not affect our predictions and they don't have an impact on the analysis, with that being said we will drop them.
+
+### Handling Missing Values
+We filled the NaN values using 2 techniques:
+* **Impute with median value:** For the numerical column, We can also replace the missing values with median values. In case you have extreme values such as outliers it is advisable to use the median approach.
+* **Impute with mode value:** For the categorical column, We can replace the missing values with mode values i.e the frequent ones.
+```python
+num_imp = SimpleImputer(strategy = 'median')
+df[numerical_columns]= num_imp.fit_transform(df[numerical_columns])
+
+cat_imp = SimpleImputer(strategy = 'most_frequent')
+df[categorical_columns]= cat_imp.fit_transform(df[categorical_columns])
+```
+### Creating New Target Variables For The Regression Model
+We Created 3 new target columns to predict the Financial Risk of a loan.
+* EMI (Equated Monthly Installment)
+* ELA (Eligible Loan Amount)
+* ROI (Return On Investment)
+
+**EMI (Equated Monthly Installment)**
+
+An equated monthly installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. Equated monthly installments are applied to both interest and principal each month so that over a specified number of years.
+
+The formula to calculate EMI = P x R x (1+R)^N / [(1+R)^N-1]  
+
+* “P” is the amount
+* “N” in tenure in months
+* “R” is the interest rate.
+
+[Reference](https://www.investopedia.com/terms/e/equated_monthly_installment.asp)
+```python
+df['EMI'] = df['Amount']*df['Interest']*(1+df['Interest'])**df['LoanDuration'] / ((1+df['Interest'])**df['LoanDuration']-1)
+```
+
+**ELA (Eligible Loan Amount)**
+
+Formula: ELA = Total Income - Total Liabilities.
+```python
+df['ELA'] = df['IncomeTotal'] - df['LiabilitiesTotal']
+```
+
+**ROI (Return On Investment)**
+
+When you put money into an investment or a business endeavor, ROI helps you understand how much profit or loss your investment has earned.
+
+Return on investment is a simple ratio that divides the net profit (or loss) from an investment by its cost. Because it is expressed as a percentage, you can compare the effectiveness or profitability of different investment choices.
+
+Formula: 
+* ROI = (Net Profit / Cost of Investment) x 100
+* ROI = Loan Amount * Interest Rate / 100
+```python
+df['ROI'] = df['Amount'] * df['Interest'] / 100
+```
+### Detecting and Removing Outliers
+An outlier is a point or set of data points that lie away from the rest of the data values of the dataset. That is, it is a data point(s) that appear away from the overall distribution of data values in a dataset.
+
+Outliers are possible only in continuous values. Thus, the detection and removal of outliers are applicable to regression values only.
+
+A simple way of representing statistical data on a plot in which a rectangle is drawn to represent the second and third quartiles, usually with a vertical line inside to indicate the median value. The lower and upper quartiles are shown as horizontal lines either side of the rectangle.
+
+
+```python
+for i in numerical_columns:
+  sns.boxplot(x=df[i])
+  plt.show();
+```
+![Markdown](img/outliers.PNG)
+
+We created a function `remove_outliers` that returns the `lower limit` and the `upper limit` so we can use them as thresholds to remove the `outliers`.
+```python
+def remove_outliers(colu):
+  sorted(colu)
+  Q1,Q3 = colu.quantile([0.25,0.75])
+  IQR = Q3 - Q1
+  lower_limit = Q1 - (1.5*IQR)
+  upper_limit = Q3 + (1.5*IQR)
+  return lower_limit, upper_limit
+```
+```python
+for i in numerical_columns:
+  low_limit_col, up_limit_col = remove_outliers(df[i])
+  df[i] = np.where(df[i] > up_limit_col, up_limit_col, df[i])
+  df[i] = np.where(df[i] < low_limit_col, low_limit_col, df[i])
+```
+[Reference](https://www.askpython.com/python/examples/detection-removal-outliers-in-python)
+## Exploratory Data Analysis
+
+![Markdown](img/Visualization_GIF.gif)
+
+
 
 ## Feature Engineering and Data Pre-Processing:
 ### Pearson Correlation
