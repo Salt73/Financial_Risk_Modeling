@@ -147,8 +147,6 @@ The Pearson correlation measures the strength of the linear relationship between
 
 [Reference](https://www.lendingtree.com/personal/reasons-why-your-personal-loan-was-declined/)
 
-## Data Wrangling
-
 ```Python
 def correlation(data, threshold):
   feature_correlation = set()
