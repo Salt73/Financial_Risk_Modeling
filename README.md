@@ -26,6 +26,19 @@ The Pearson correlation measures the strength of the linear relationship between
 * 0 being no correlation, and + 1 meaning a total positive correlation
 ![Markdown](https://editor.analyticsvidhya.com/uploads/39170Formula.JPG)
 
+**Reasons why a loan could be rejected:**
+* Credit score was too low
+* Debt-to-income ratio was too high
+* Tried to borrow too much
+* Income was insufficient or unstable
+* Didn’t meet the basic requirements
+* Missing information on the application
+* Loan purpose didn’t meet the lender’s criteria
+
+[Reference](https://www.lendingtree.com/personal/reasons-why-your-personal-loan-was-declined/)
+
+## Data Wrangling
+
 ```Python
 def correlation(data, threshold):
   feature_correlation = set()
