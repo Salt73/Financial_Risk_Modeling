@@ -25,7 +25,7 @@ As in the financial research domain, there are very few datasets available that 
 * Missing information on the application
 * Loan purpose didn’t meet the lender’s criteria
 
-[Reference](https://technocollabs.gitbook.io/bondora-statistics/)
+
 
 ## Data Wrangling
 ### Discover The Data
@@ -76,7 +76,7 @@ The formula to calculate EMI = P x R x (1+R)^N / [(1+R)^N-1]
 * “N” in tenure in months
 * “R” is the interest rate.
 
-[Reference](https://www.investopedia.com/terms/e/equated_monthly_installment.asp)
+
 ```python
 df['EMI'] = df['Amount']*df['Interest']*(1+df['Interest'])**df['LoanDuration'] / ((1+df['Interest'])**df['LoanDuration']-1)
 ```
@@ -131,7 +131,7 @@ for i in numerical_columns:
   df[i] = np.where(df[i] > up_limit_col, up_limit_col, df[i])
   df[i] = np.where(df[i] < low_limit_col, low_limit_col, df[i])
 ```
-[Reference](https://www.askpython.com/python/examples/detection-removal-outliers-in-python)
+
 ## Exploratory Data Analysis
 
 ![Markdown](img/Visualization_GIF.gif)
@@ -146,7 +146,7 @@ The Pearson correlation measures the strength of the linear relationship between
 ![Markdown](https://editor.analyticsvidhya.com/uploads/39170Formula.JPG)
 
 
-[Reference](https://www.lendingtree.com/personal/reasons-why-your-personal-loan-was-declined/)
+
 
 ```Python
 def correlation(data, threshold):
