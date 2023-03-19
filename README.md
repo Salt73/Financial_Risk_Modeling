@@ -294,7 +294,25 @@ To access our app click the following [link](http://haniiiatef.pythonanywhere.co
 
 ![Markdown](img/website_GIF.gif)
 
+## Acknowledgments
 
+* [Project Summary](https://technocollabs.gitbook.io/bondora-statistics/)
+* [7 Reasons Why Your Personal Loan Was Declined](https://www.lendingtree.com/personal/reasons-why-your-personal-loan-was-declined/)
+* [Detectiong Outlier](https://www.askpython.com/python/examples/detection-removal-outliers-in-python)
+* [EMI](https://www.investopedia.com/terms/e/equated_monthly_installment.asp)
+* [Feature Engineering](https://www.kaggle.com/learn/feature-engineering)
+* [[Feature Engineering](https://www.analyticsvidhya.com/blog/2021/03/step-by-step-process-of-feature-engineering-for-machine-learning-algorithms-in-data-science/)
+* [Logistic Regression](https://towardsdatascience.com/the-perfect-recipe-for-classification-using-logistic-regression-f8648e267592)
+* [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+* [Confusion Matrix](https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea)
+* [Pipeline](https://towardsdatascience.com/building-generator-pipelines-in-python-8931535792ff)
+* [Mean Square Error](https://www.simplilearn.com/tutorials/statistics-tutorial/mean-squared-error)
+* [Mean Absolute Erro](https://c3.ai/glossary/data-science/mean-absolute-error/)
+* [R2 Score](https://www.investopedia.com/terms/r/r-squared.asp)
+* [Root Mean Square Error](https://www.sciencedirect.com/topics/engineering/root-mean-squared-error)
+* [Website Design Idea](https://codepen.io/designcourse/pen/VwdgYZL)
+* [pythonanywhere](https://www.pythonanywhere.com/)
+* [Emoji](https://gist.github.com/rxaviers/7360908)
 
 
 
