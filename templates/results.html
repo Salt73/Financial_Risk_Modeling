@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/resultMain.css')}}">
+    <title>Prediction results</title>
+</head>
+<body>
+    <section>
+        <h1 class="head"><img class='imgAi' src="https://www.beyondcss.dev/underline.svg">Predictions</h1>
+        <p class="para">{{message}} <b>{{pred_class}}</b>
+            <br>Your ROI is: <b>{{pred_roi}}</b>
+            <br>Your ELA is: <b>{{pred_ela}}</b>
+            <br>Your EMI is: <b>{{pred_emi}}</b>
+        </p>
+        <div class="button">
+            <a href="/" class="submitButton">Return Back</a>
+        </div>
+    </section>
+</body>
+</html>

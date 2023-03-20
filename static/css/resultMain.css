@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.head {
+    letter-spacing: 0.25em;
+    padding: 50px 0px;
+    font-size: 1.5em;
+    z-index: 999;
+}
+
+
+.head img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+} 
+
+.imgAi {
+    width: 250px;
+    height: 14%;
+}
+
+.para {
+    font-size: 0.8em;
+    /* width: 80%; */
+
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+.submitButton {
+    background: #000;
+    color: #fff;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    border: 1px solid #000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.submitButton::after, 
+.submitButton::before {
+    content: '';
+    position: absolute;
+    opacity: 0.3;
+    background: #000;
+    border-radius: inherit;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transfrom 0.3s ease;
+}
+.submitButton:hover {   
+    transform: translate(-12px, -12px);
+
+}
+.submitButton:hover::after {
+    transform: translate(6px, 6px);
+    width: 100%;
+    height: 100%;
+}
+.submitButton:hover::before {
+    transform: translate(12px, 12px);
+    width: 100%;
+    height: 100%;
+}

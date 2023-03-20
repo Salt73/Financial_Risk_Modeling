@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bondora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <script src="{{url_for('static', filename='Techno_script.js')}}" defer></script>
+</head>
+<body>
+    <section>
+        <h1 class="head"><a href="https://technocolabs.com/" target="_blank"><img class = 'imgTechno' src="https://www.beyondcss.dev/underline.svg">Technocolabs</a></h1>
+        <p class="para">Technocolabs was founded in 2019 by a Team of Non-Profit Orgnization in Indore, who brought years of experience in Machine learning, Data science and AI Product Development to a new venture to make it a success. In 2019 an experienced leader Yasin Shah joined the team as a CEO and brought the company to a whole new level.</p>
+        <div class = 'scrolldown'>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+    <section>
+        <h1 class="head"><a href="https://www.bondora.com/en" target="_blank"><img class='imgBondora' src="https://www.beyondcss.dev/underline.svg">Bondora</a></h1>
+        <p class="para">Go & Grow Unlimited is Bondora’s easiest and most trusted way to invest. Whether you’re an 18-year-old student in Berlin, a retiree living in the Italian countryside, or just someone who wants to start investing – Go & Grow Unlimited will help you achieve your goals with ease.</p>
+    </section>
+
+    <section>
+        <h1 class="head"><img class='imgAi' src="https://www.beyondcss.dev/underline.svg">AI-Solution</h1>
+        <p class="para">Default risk has long been a significant risk factor to test borrowers’ behaviour in Peer-to-Peer (P2P) lending. In P2P lending, loans are typically uncollateralized and lenders seek higher returns as compensation for the financial risk they take. In addition, they need to make decisions under information asymmetry that works in favor of the borrowers. In order to make rational decisions, lenders want to minimize the risk of default of each lending decision and realize the return that compensates for the risk.</p>
+    </section>
+
+    <svg width="275" height="443" viewBox="0 0 275 443">
+        <path d="M4 52.491V214.051C10.14 272.995 56.1903 271.358 78.4479 263.171L241.159 182.583C295.498 142.673 260.73 101.228 236.554 85.4937L68.0866 5.28951C23.8784 -3.30654 6.9421 33.1755 4 52.491Z" stroke="black" stroke-width="7.20127"/>
+        <path d="M4 224.796V382.518C10.447 443.304 54.2715 442.639 75.3779 434.708L235.403 356.806C299.873 315.975 262.265 273.276 235.403 257.031L81.9017 181.048C27.8694 159.251 7.45377 201.131 4 224.796Z" stroke="black" stroke-width="7.20127"/>
+    </svg>          
+    <!-- <a href="/">Back to Form</a> -->
+    <form action="{{ url_for('results') }}" method="post">
+        <h1 class="head_form"><img src="https://www.beyondcss.dev/underline.svg">Use Our Model</h1>
+        <div class="features">
+            <div class="inputBox">
+                <input type="number" required name="Feature1" step="0.001">
+                <span>Interest And<br>Penalty Balance</span>
+                <span class = 'helpBox'>Unpaid interest and penalties</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature2" step="0.001">
+                <span>Principale Balance</span>
+                <span class = 'helpBox'>Principal that still needs to be paid by the borrower</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature3" step="0.001">
+                <span>Principale Payments<br>Made</span>
+                <span class = 'helpBox'>Note owner received loan transfers principal amount</span>
+            </div>
+        
+            <div class="inputBox">
+                <input type="number" required name="Feature4" step="0.001">
+                <span>Principale Overdue<br>By Schedule</span> 
+                <span class = 'helpBox'>According to the current schedule, principal that is overdue</span> 
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature5" step="0.001">
+                <span>Next Payment Nr</span>
+                <span class = 'helpBox'>According to schedule the number of the next payment</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature6" step="0.001">
+                <span>Stage Active<br>Since: Week</span>
+                <span class = 'helpBox'>How long the current recovery stage has been active</span>
+            </div>
+        
+            <div class="inputBox">
+                <input type="number" required name="Feature7" step="0.001">
+                <span>Stage Active<br>Since: Month</span>
+                <span class = 'helpBox'>How long the current recovery stage has been active</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature8" step="0.001">
+                <span>Stage Active<br>Since: Day</span>
+                <span class = 'helpBox'>How long the current recovery stage has been active</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature9" step="0.001">
+                <span>Nr Of Schedule<br>Payments</span>
+                <span class = 'helpBox'>According to schedule the count of scheduled payments</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="number" required name="Feature10" step="0.001">
+                <span>Maturity Date<br>Last Year</span>
+                <span class = 'helpBox'>Loan maturity date according to the current payment schedule</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature11" step="0.001">
+                <span>Amount</span>
+                <span class = 'helpBox'>Amount the borrower received on the Primary Market. This is the principal balance of your purchase from Secondary Market</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature12" step="0.001">
+                <span>Interest</span>
+                <span class = 'helpBox'>Maximum interest rate accepted in the loan application</span>
+            </div>
+                
+            <div class="inputBox">
+                <input type="number" required name="Feature13" step="0.001">
+                <span>Total Income</span>
+                <span class = 'helpBox'>Borrower's total income</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature14" step="0.001">
+                <span>Total Liabilities</span>
+                <span class = 'helpBox'>Total monthly liabilities</span>
+            </div>
+            <div class="inputBox">
+                <input type="number" required name="Feature15" step="0.001">
+                <span>Loan Duration</span>
+                <span class = 'helpBox'>Current loan duration in months</span>
+            </div>
+                   
+
+        </div>
+        <div class="button">
+            <button type= 'submit' class="submitButton"><input type="submit" class="predictButton" value="Predict"></button> 
+        </div>
+    </form>
+
+</body>
+</html>
