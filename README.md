@@ -204,7 +204,7 @@ The function mentioned above calculates mutual information scores using the mutu
 
 ## Machine Learning Modeling
 ### Choosing the Features
-We chose the top 15 features for our analysis. We selected 10 features based on their mi scores and created the remaining 3 target variables from the remaining 5 features.
+We chose 15 features for our analysis. We selected 10 features based on their mi scores and chose the 5 remaining features based on the 3 new created target variables.
  * InterestAndPenaltyBalance
  * PrincipalBalance
  * PrincipalPaymentsMade
@@ -295,7 +295,7 @@ Model_Reg_Pipeline = Pipeline([
 * Mean Absolute Error     :arrow_right: `11955.67`
 * Mean Squared Error      :arrow_right: `1003713881.77`
 * Root Mean Squared Error :arrow_right: `31681.44`
-* R2 Score                :arrow_right: `0.47`
+* R2 Score                 &nbsp; &nbsp; &nbsp; :arrow_right: `0.47`
 
 
 ![Markdown](img/linear_reg_gif.gif)
