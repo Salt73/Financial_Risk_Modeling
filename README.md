@@ -292,10 +292,10 @@ Model_Reg_Pipeline = Pipeline([
 ])
 ```
 #### Linear Regression Metrics :mag:
-* Mean Absolute Error     :arrow_right: `11955.67`
-* Mean Squared Error      :arrow_right: `1003713881.77`
+* Mean Absolute Error :arrow_right: `11955.67`
+* Mean Squared Error :arrow_right: `1003713881.77`
 * Root Mean Squared Error :arrow_right: `31681.44`
-* R2 Score                 &nbsp; &nbsp; &nbsp; :arrow_right: `0.47`
+* R2 Score :arrow_right: `0.47`
 
 
 ![Markdown](img/linear_reg_gif.gif)
